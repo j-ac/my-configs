@@ -26,10 +26,23 @@ set cindent
 set shiftwidth=4                " Use tabs of width 4 for indentation
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<     " Chars to represent whitespace chars
 set updatetime=100
-set rnu
+set rnu							" Enable relative line numbers
 set foldmethod=syntax
 set foldlevel=99
 set foldlevelstart=99
+startinsert						" Begin vim in insert mode
+map q i
+
+
+" DEL key does not overwrite any registers
+map <DEL> "_x					
+
+
+" background color switching between modes
+" 234 = grey 11 and 0 = black
+autocmd InsertEnter * highlight Normal ctermbg=234
+autocmd InsertLeave * highlight Normal ctermbg=0
+
 
 " ALE settings
 let g:ale_linters = {'rust': ['analyzer']}
