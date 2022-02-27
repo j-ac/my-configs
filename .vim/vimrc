@@ -1,8 +1,11 @@
 set nocompatible      " Enable Vim mode (instead of vi emulation)
 
+packadd! dracula
+colorscheme dracula
+
 syntax on         " Enable syntax highlighting
 filetype plugin indent on
-colorscheme sublimemonokai
+"colorscheme sublimemonokai
 
 "let g:is_posix = 1              " Our /bin/sh is POSIX, not bash
 set smartindent                 " Intelligent indentation matching
