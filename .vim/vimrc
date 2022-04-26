@@ -1,11 +1,14 @@
 set nocompatible      " Enable Vim mode (instead of vi emulation)
 
+"Comment the following 2 lines to remove dracula theme
 packadd! dracula
 colorscheme dracula
 
+"Uncomment the following line to enable monokai theme
+"colorscheme sublimemonokai
+
 syntax on         " Enable syntax highlighting
 filetype plugin indent on
-"colorscheme sublimemonokai
 
 "let g:is_posix = 1              " Our /bin/sh is POSIX, not bash
 set smartindent                 " Intelligent indentation matching
@@ -34,8 +37,14 @@ set foldmethod=syntax
 set foldlevel=99
 set foldlevelstart=99
 startinsert						" Begin vim in insert mode
+
+"==MAPPINGS==
+
+"Enter insert mode with q
 map q i
 
+"remove search highlighting when enter is pressed
+nmap <Enter> :noh<Enter>
 
 " DEL key does not overwrite any registers
 map <DEL> "_x					
