@@ -26,10 +26,11 @@ set wildmenu                    " Show menu for tab completion in command mode
 set ttyfast	                    " Speed up scrolling in tty
 set number                      " Show line numbers
 set tabstop=4                   " Tab width is 4 spaces
-set softtabstop=4
+"set softtabstop= 4             " Leave these two disabled if using tabs
+"set expandtab                  
 set autoindent
 set cindent
-set shiftwidth=4                " Use tabs of width 4 for indentation
+"set shiftwidth=0                " Use tabs of width 4 for indentation
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<     " Chars to represent whitespace chars
 set updatetime=100
 set rnu							" Enable relative line numbers
@@ -52,9 +53,20 @@ map <DEL> "_x
 
 " background color switching between modes
 " 234 = grey 11 and 0 = black
-autocmd InsertEnter * highlight Normal ctermbg=234
-autocmd InsertLeave * highlight Normal ctermbg=0
+if !(has('gui_running')) "If in TUI vim
+	autocmd InsertEnter * highlight Normal ctermbg=234
+	autocmd InsertLeave * highlight Normal ctermbg=0
+endif
 
+"The colorscheme in the Day script seems to only work in gvim so for now they are locked behind this 'gui_running' check
+if(has('gui_running')) "If in gvim
+		"Next two lines identical to those found in night.vim, but are
+		"neccesary so the script doesn't need to be run for higlighting
+		:autocmd InsertEnter * highlight Normal guibg=#282A36 "The default dracula background color
+		:autocmd InsertLeave * highlight Normal guibg=#000000 "black		
+		command Day source day.vim
+		command Night source night.vim
+endif
 
 " ALE settings
 let g:ale_linters = {'rust': ['analyzer']}
