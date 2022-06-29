@@ -64,8 +64,8 @@ if(has('gui_running')) "If in gvim
 		"neccesary so the script doesn't need to be run for higlighting
 		:autocmd InsertEnter * highlight Normal guibg=#282A36 "The default dracula background color
 		:autocmd InsertLeave * highlight Normal guibg=#000000 "black		
-		command Day source day.vim
-		command Night source night.vim
+		command Day source ~/.vim/day.vim
+		command Night source ~/.vim/night.vim
 endif
 
 " ALE settings
