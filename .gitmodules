@@ -7,3 +7,6 @@
 [submodule ".vim/pack/themes/start/dracula"]
 	path = .vim/pack/themes/start/dracula
 	url = git@github.com:dracula/vim.git
+[submodule ".vim/pack/themes/start/strawberry"]
+	path = .vim/pack/themes/start/strawberry
+	url = https://github.com/haystackandroid/strawberry

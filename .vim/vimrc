@@ -1,12 +1,22 @@
 set nocompatible      " Enable Vim mode (instead of vi emulation)
 
+" === COLOUR SCHEME ===
 "Comment the following 2 lines to remove dracula theme
+set termguicolors
 packadd! dracula
-colorscheme dracula
 
-"Uncomment the following line to enable monokai theme
-"colorscheme sublimemonokai
+" These two scripts change colourscheme, and initialize colour changing
+" scripts tailored to them
+command Day source ~/.vim/day.vim
+command Night source ~/.vim/night.vim
 
+" Default to night.
+Night
+
+" =========================
+
+
+" === GENERAL SETTINGS ===
 syntax on         " Enable syntax highlighting
 filetype plugin indent on
 
@@ -38,9 +48,11 @@ set foldmethod=syntax
 set foldlevel=99
 set foldlevelstart=99
 startinsert						" Begin vim in insert mode
+" ========================
+
+
 
 "==MAPPINGS==
-
 "Enter insert mode with q
 map q i
 
@@ -49,24 +61,8 @@ nmap <Enter> :noh<Enter>
 
 " DEL key does not overwrite any registers
 map <DEL> "_x					
+"============
 
-
-" background color switching between modes
-" 234 = grey 11 and 0 = black
-if !(has('gui_running')) "If in TUI vim
-	autocmd InsertEnter * highlight Normal ctermbg=234
-	autocmd InsertLeave * highlight Normal ctermbg=0
-endif
-
-"The colorscheme in the Day script seems to only work in gvim so for now they are locked behind this 'gui_running' check
-if(has('gui_running')) "If in gvim
-		"Next two lines identical to those found in night.vim, but are
-		"neccesary so the script doesn't need to be run for higlighting
-		:autocmd InsertEnter * highlight Normal guibg=#282A36 "The default dracula background color
-		:autocmd InsertLeave * highlight Normal guibg=#000000 "black		
-		command Day source ~/.vim/day.vim
-		command Night source ~/.vim/night.vim
-endif
 
 " ALE settings
 let g:ale_linters = {'rust': ['analyzer']}
