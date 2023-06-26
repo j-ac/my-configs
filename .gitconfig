@@ -1,0 +1,7 @@
+[user]
+	email = 
+	name = 
+[core]
+	editor = vim
+[commit]
+	template = /home/tux/.gitmessage.txt

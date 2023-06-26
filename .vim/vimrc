@@ -13,14 +13,11 @@ command Night source ~/.vim/night.vim
 " Default to night.
 Night
 
-" =========================
-
-
 " === GENERAL SETTINGS ===
-syntax on         " Enable syntax highlighting
+syntax on         				" Enable syntax highlighting
 filetype plugin indent on
 
-"let g:is_posix = 1              " Our /bin/sh is POSIX, not bash
+"let g:is_posix = 1             " Our /bin/sh is POSIX, not bash
 set smartindent                 " Intelligent indentation matching
 set autoread                    " Update the file if it's changed externally
 set backspace=indent,eol,start  " Allow backspacing over anything
@@ -35,42 +32,40 @@ set ttyfast                     " Redraw faster for smoother scrolling
 set wildmenu                    " Show menu for tab completion in command mode
 set ttyfast	                    " Speed up scrolling in tty
 set number                      " Show line numbers
+set rnu							" Enable relative line numbers
+silent! helptags ALL 			" Load helptags for plugins at launch
+
+"tabs
+set noexpandtab                 " Tab indentation
 set tabstop=4                   " Tab width is 4 spaces
-"set softtabstop= 4             " Leave these two disabled if using tabs
-"set expandtab                  
+set shiftwidth=4
 set autoindent
 set cindent
-"set shiftwidth=0                " Use tabs of width 4 for indentation
+
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<     " Chars to represent whitespace chars
 set updatetime=100
-set rnu							" Enable relative line numbers
 set foldmethod=syntax
 set foldlevel=99
 set foldlevelstart=99
 startinsert						" Begin vim in insert mode
-" ========================
-
-
 
 "==MAPPINGS==
 "Enter insert mode with q
 map q i
 
 "remove search highlighting when enter is pressed
-nmap <Enter> :noh<Enter>
+nmap <silent> <Enter> :noh<Enter>
 
 " DEL key does not overwrite any registers
 map <DEL> "_x					
-"============
 
-
-" ALE settings
+" === ALE SETTINGS ===
 let g:ale_linters = {'rust': ['analyzer']}
 let g:ale_fixers = {'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines']}
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_completion_enabled = 1
 
-" Rust-vim settings
+" === RUST-VIM SETTINGS ===
 "let g:rust_fold = 1
 let g:rustfmt_autosave = 1
 

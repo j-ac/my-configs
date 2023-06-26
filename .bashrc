@@ -1,5 +1,6 @@
 # .bashrc
 
+HISTSIZE= HISTFILESIZE= # Infinite history
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -23,10 +24,13 @@ if [ -d ~/.bashrc.d ]; then
 		fi
 	done
 fi
-
 unset rc
-. "$HOME/.cargo/env"
-alias dotfiles='/usr/bin/git --git-dir=/home/jc/.dotfiles --work-tree=/home/jc'
+
+#. "$HOME/.cargo/env"
+alias ls='ls -hN --color=auto --group-directories-first'
+alias grep="grep --color=auto"
+alias ccat="highlight --out-format=ansi"
+alias dotfiles='/usr/bin/git --git-dir=/home/tux/.dotfiles --work-tree=/home/tux'
 alias intellij='/bin/intellijidea-ce'
 alias close='exit'
 alias quit='exit'
