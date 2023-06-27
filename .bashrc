@@ -27,11 +27,4 @@ fi
 unset rc
 
 #. "$HOME/.cargo/env"
-alias ls='ls -hN --color=auto --group-directories-first'
-alias grep="grep --color=auto"
-alias ccat="highlight --out-format=ansi"
-alias dotfiles='/usr/bin/git --git-dir=/home/tux/.dotfiles --work-tree=/home/tux'
-alias intellij='/bin/intellijidea-ce'
-alias close='exit'
-alias quit='exit'
-alias showip='hostname -I'
+source ~/.shell_aliases # Used by multiple of my shells so only one change affects them all
