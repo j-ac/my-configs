@@ -28,3 +28,4 @@ unset rc
 
 #. "$HOME/.cargo/env"
 source ~/.shell_aliases # Used by multiple of my shells so only one change affects them all
+alias explorer="explorer.exe ."

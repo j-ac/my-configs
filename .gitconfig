@@ -1,7 +1,9 @@
 [user]
-	email = 
-	name = 
+	email = jcorr851@gmail.com
+	name = James
 [core]
 	editor = vim
 [commit]
 	template = /home/tux/.gitmessage.txt
+[alias]
+	dif = "!git diff --color-words --word-diff --minimal --patience"
