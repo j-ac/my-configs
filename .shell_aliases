@@ -1,5 +1,8 @@
 alias ls='ls -hN --color=auto --group-directories-first'
+alias lsd='ls -d [!.]*'
 alias grep="grep --color=auto"
+alias cattop="top -b -n 1"
+alias topfind="cattop | grep -e 'PID' -e "
 alias ccat="highlight --out-format=ansi"
 alias dotfiles='/usr/bin/git --git-dir=/home/tux/.dotfiles --work-tree=/home/tux'
 alias intellij='/bin/intellijidea-ce'
