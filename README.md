@@ -2,7 +2,7 @@
 ## How to set up the .dotfiles alias in a new environment
 
 ```bash
-git clone --bare git@github.com:j-ac/my-configs.git $HOME/.dotfiles
+git clone --bare --recurse-submodules git@github.com:j-ac/my-configs.git $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 dotfiles checkout
 ```
