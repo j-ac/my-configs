@@ -9,3 +9,4 @@ alias intellij='/bin/intellijidea-ce'
 alias close='exit'
 alias quit='exit'
 alias showip='hostname -I'
+alias clera="clear"
