@@ -1,0 +1,9 @@
+#!/bin/bash
+# Converts meters to feet and inches using `units`
+
+if [ -z "$1" ]; then
+    echo "Usage: $(basename "$0") <meters>"
+    exit 1
+fi
+
+units -q "${1}m" 'ft;in'
