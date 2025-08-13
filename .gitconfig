@@ -1,9 +1,14 @@
 [user]
-	email =
-	name = James
+	email = 83185117+j-ac@users.noreply.github.com
+	name = j-ac
 [core]
 	editor = vim
 [commit]
 	template = /home/tux/.gitmessage.txt
 [alias]
 	dif = "!git diff --color-words --word-diff --minimal --patience"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

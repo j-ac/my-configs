@@ -1,0 +1,8 @@
+#!/bin/bash
+# Send stdin to clipboard, auto-detecting X11 vs Wayland.
+
+case "$XDG_SESSION_TYPE" in
+    wayland) wl-copy ;;
+    x11) xclip -selection clipboard ;;
+    *) echo "Unknown session type: $XDG_SESSION_TYPE" >&2; exit 1 ;;
+esac
