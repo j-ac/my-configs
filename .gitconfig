@@ -4,7 +4,7 @@
 [core]
 	editor = vim
 [commit]
-	template = /home/tux/.gitmessage.txt
+	template = ~/.gitmessage.txt
 [alias]
 	dif = "!git diff --color-words --word-diff --minimal --patience"
 [filter "lfs"]
