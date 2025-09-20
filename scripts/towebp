@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+img2webp -loop 0 -d 2 "$1"/*.png -o output.webp
