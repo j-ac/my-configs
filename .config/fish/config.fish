@@ -1,4 +1,3 @@
-fish_config theme choose "Dracula Official"
 source ~/.shell_aliases
 set -gx PATH $HOME/scripts $PATH
 

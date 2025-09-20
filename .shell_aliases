@@ -10,3 +10,4 @@ alias close='exit'
 alias quit='exit'
 alias showip='hostname -I'
 alias clera="clear"
+alias gitroot='cd $(git rev-parse --show-toplevel)'

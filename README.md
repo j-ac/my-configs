@@ -10,6 +10,10 @@ dotfiles checkout
 There will probably be an issue with one or more files conflicting with ones just cloned.
 Delete the files in your home directory that are conflicting and run `dotfiles checkout` again.
 
+Now populate the submodules:
+
+```dotfiles submodule update --init --recursive```
+
 Then finally prevent untracked files from cluttering `dotfiles status`
 ```bash
 dotfiles config --local status.showUntrackedFiles no
