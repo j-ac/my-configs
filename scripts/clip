@@ -1,6 +1,12 @@
 #!/bin/bash
 # Send stdin to clipboard, auto-detecting X11 vs Wayland.
 
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    # WSL detected
+    clip.exe
+    exit 0
+fi
+
 case "$XDG_SESSION_TYPE" in
     wayland) wl-copy ;;
     x11) xclip -selection clipboard ;;
