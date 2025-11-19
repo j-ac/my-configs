@@ -30,7 +30,6 @@ set incsearch                   " Highlight search matches as you type them
 set ruler                       " Show cursor position
 set ttyfast                     " Redraw faster for smoother scrolling
 set wildmenu                    " Show menu for tab completion in command mode
-set ttyfast	                    " Speed up scrolling in tty
 set number                      " Show line numbers
 set rnu							" Enable relative line numbers
 silent! helptags ALL 			" Load helptags for plugins at launch
@@ -51,7 +50,10 @@ startinsert						" Begin vim in insert mode
 
 "==MAPPINGS==
 "Enter insert mode with q
-map q i
+nnoremap q i
+
+"Begin recording macro with Q instead of q
+nnoremap Q q
 
 "remove search highlighting when enter is pressed
 nmap <silent> <Enter> :noh<Enter>
